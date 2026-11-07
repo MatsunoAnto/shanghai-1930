@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1b2028">
+  <title>弄堂剪报 · 上海像素漫游</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="layout.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main id="experience">
+    <div class="mount">
+      <div id="stage">
+        <canvas id="street" width="640" height="360" aria-label="上海街区。用 A、D 或左右方向键走路，走过画面边缘换场景，走近海报按 E 查看。" tabindex="0"></canvas>
+        <p id="place" role="status" aria-live="polite"></p>
+        <button id="inspect" class="marker" hidden><kbd>E</kbd><span>看海报</span></button>
+        <p id="loading" role="status">正在展开街图…</p>
+        <output id="notice" role="status" aria-live="polite"></output>
+        <div id="touch-move" aria-label="左右移动">
+          <button id="move-left" aria-label="向左走" title="向左走">◀</button>
+          <button id="move-right" aria-label="向右走" title="向右走">▶</button>
+        </div>
+      </div>
+    </div>
+    <footer class="dock">
+      <h1>弄堂剪报</h1>
+      <p class="controls"><span class="keyboard-hint"><kbd>A</kbd> <kbd>D</kbd> / <kbd>←</kbd> <kbd>→</kbd><i></i></span>点地面走路，走过街角换场景</p>
+      <div class="bag"><span>报袋</span><div id="scraps" aria-label="已收集的剪报"></div><output id="count">0/3</output></div>
+      <button id="restart" class="reset" aria-label="重新开始（R）" title="重新开始（R）">↺</button>
+    </footer>
+  </main>
+  <dialog id="detail" aria-labelledby="poster-title">
+    <section class="folio">
+      <div class="proof"><canvas id="print" aria-label="海报正面，按住并拖动鼠标或手指圈选" aria-describedby="cut-hint"></canvas></div>
+      <div class="tools">
+        <h2 id="poster-title"></h2>
+        <p id="cut-hint" role="status"></p>
+        <figure id="sample-box" hidden>
+          <figcaption>剪片预览</figcaption>
+          <canvas id="sample" width="228" height="144" aria-label="圈选范围内的剪片"></canvas>
+        </figure>
+        <button id="cut" class="action" disabled>确认剪下 <kbd>E</kbd></button>
+        <button id="redraw" class="back" hidden>重新圈选</button>
+        <button id="back" class="back">回到街上 <kbd>Esc</kbd></button>
+      </div>
+    </section>
+  </dialog>
+</body>
+</html>

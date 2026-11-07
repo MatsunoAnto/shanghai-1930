@@ -1,0 +1,40 @@
+# Generated builds and archives
+dist/
+node_modules/
+*.zip
+*.7z
+*.tar
+*.tar.gz
+
+# Raw generation runs and temporary artifacts
+ai/runs/
+raw-generations/
+generated_images/
+scenery-originals/
+tmp/
+temp/
+work/
+*.log
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+credentials.json
+credentials*.json
+*.pem
+*.key
+*.p12
+*.pfx
+.aws/
+.codex/
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~

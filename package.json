@@ -1,0 +1,10 @@
+{
+  "name": "shanghai-1930",
+  "version": "0.1.0",
+  "private": true,
+  "description": "弄堂剪报：1930 年代上海横版像素冒险原型",
+  "scripts": {
+    "check": "node --check game.js && node --check layout.js && node --check scripts/build.mjs",
+    "build": "node scripts/build.mjs"
+  }
+}

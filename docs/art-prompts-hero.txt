@@ -1,0 +1,16 @@
+Built-in image_gen mode. Reference: an earlier project character illustration (character identity only; the earlier illustration is not part of this repository).
+Output: assets/hero.png; four 30x48 side-facing walking frames. Prepared by crop, baseline alignment and nearest-neighbor resize. Original generated alpha preserved.
+Pinterest reference could not be inspected because the page required login. This is an original pixel direction based on the user's written request, not a claimed faithful recreation of the pin.
+
+Generation prompt:
+Use case: style-transfer
+Asset type: transparent side-view 2D pixel art sprite sheet, four side-by-side walking cycle frames in exactly one horizontal row.
+Input image 1 is a CHARACTER IDENTITY REFERENCE ONLY. Convert this same fictional 12-year-old 1930 Shanghai newspaper boy to actual low-resolution pixel art and a TRUE HORIZONTAL SIDE VIEW, facing right in every frame. Keep tousled short black hair, no hat, slate blue collared shirt with rolled sleeves, loose dark cuffed trousers, black cloth shoes, off-white newsprint satchel and cream strap. Small warm face, curious confident posture, natural child proportions ~4.5 heads high.
+Each of the four equal cells contains ONE same full-body boy, identical scale and same head height/baseline. Frame 1 right-facing neutral/feet close, frame 2 forward walking contact, frame 3 passing step feet close, frame 4 opposite contact. Body stays erect, only arms and legs change slightly. Keep all visible satchel details consistent. The first frame also works as idle.
+Style: premium indie pixel adventure sprite, designed as approximately 22 pixels wide by 40 pixels tall per frame, enlarged nearest-neighbor with crisp identical square pixel cells, economical solid clusters, 16-24 colors. Dark navy outlines, slate blue/teal shirt, warm peach skin, cream bag. NO smooth gradients, no anti-aliasing, no watercolor, no halftone, no 3D shading, no isometric elevated angle. No checkerboard baked into image, real transparent alpha background. No ground shadow, no scenery, no text, no grid, no labels, no borders. Landscape 3:2 or wide image with generous transparent gutters separating frames, all feet at same baseline; occupy most canvas height.
+
+Alpha cleanup prompt:
+Edit target: image1 four-frame pixel newspaper boy sprite sheet. Preserve the EXACT four poses, character identity, colors, placement, size, pixel art details and transparent canvas. Only remove every blurry halo, dark translucent smudge and soft outer shadow around all four characters. The sprites must have crisp hard silhouettes with fully opaque pixel clusters inside and 100% transparent alpha everywhere outside. No glow, no gradients, no lighting haze, no new background color. All four entire figures remain visible without clipping. Make flat game-ready alpha sprites, actual transparent output.
+
+Poster assets:
+Existing ship/portrait/swallow designs reduced to128x160,32colors for consistent pixel presentation. Cutting geometry stays continuous mouse/touch input, while artwork is drawn without smoothing.

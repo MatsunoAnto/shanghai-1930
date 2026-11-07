@@ -1,0 +1,73 @@
+:root { color-scheme: light; --ink: #26313a; --cream: #f6e8c8; --gold: #d7ad6d; --dark: #1b2028; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--dark); color: var(--cream); font-family: "Microsoft YaHei", "PingFang SC", sans-serif; }
+button { font: inherit; color: inherit; cursor: pointer; touch-action: manipulation; }
+button:focus-visible, canvas:focus-visible { outline: 3px solid #ffcb69; outline-offset: -3px; }
+#experience { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+.mount { flex: 1; display: grid; place-items: center; }
+#stage { position: relative; width: min(100%, calc((100svh - 60px) * 16 / 9)); max-width: 100vw; aspect-ratio: 16 / 9; isolation: isolate; }
+#street { display: block; width: 100%; height: 100%; touch-action: none; image-rendering: pixelated; image-rendering: crisp-edges; }
+#place { position: absolute; top: clamp(10px,1.7vw,24px); left: clamp(14px,2vw,28px); margin: 0; padding: 6px 10px; color: #f6e8c8; background: #26313ae8; border-left: 3px solid var(--gold); font-family: "SimSun","Songti SC",serif; font-size: clamp(12px,1.2vw,16px); letter-spacing: .15em; pointer-events: none; }
+#loading, #notice { position: absolute; left: 50%; transform: translateX(-50%); margin: 0; max-width: 90%; padding: 9px 17px; color: var(--cream); background: #26313af5; font-size: 14px; letter-spacing: .05em; pointer-events: none; text-align: center; }
+#loading { top: 46%; }
+#notice { bottom: 5%; opacity: 0; transition: opacity .18s; }
+#notice.visible { opacity: 1; }
+.marker { position: absolute; display: flex; align-items: center; gap: 7px; transform: translate(-50%, -100%); padding: 7px 11px; min-height: 36px; border: 1px solid var(--ink); background: var(--cream); color: var(--ink); box-shadow: 2px 3px 0 var(--ink); font-size: 13px; white-space: nowrap; }
+.marker::after { position: absolute; content: ""; bottom: -6px; left: calc(50% - 5px); width: 9px; height: 9px; transform: rotate(45deg); border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); background: var(--cream); }
+#touch-move { display: none; position: absolute; bottom: 14px; left: 16px; gap: 8px; }
+#touch-move button { width: 48px; height: 44px; border: 1px solid #e8d5aba6; background: #26313ae8; color: var(--cream); font-size: 19px; touch-action: none; user-select: none; -webkit-user-select: none; }
+#touch-move button.pressed { background: var(--cream); color: var(--ink); }
+.dock { min-height: 60px; display: flex; align-items: center; gap: clamp(10px,2.2vw,34px); padding: 7px clamp(10px,3vw,44px); background: #242a31; color: #f2e6ce; border-top: 1px solid #d7ad6d35; }
+h1, h2 { font-family: "SimSun","Songti SC",serif; }
+h1 { margin: 0; font-size: clamp(16px,1.7vw,23px); letter-spacing: .15em; white-space: nowrap; }
+.controls { margin: 0; font-size: 13px; color: #d6ccba; }
+kbd { font: 600 .87em ui-monospace, monospace; letter-spacing: 0; border: 1px solid currentColor; border-radius: 2px; padding: .1em .36em; white-space: nowrap; }
+.controls i { border-left: 1px solid #79818d; margin: 0 12px; }
+.bag { margin-left: auto; display: flex; align-items: center; gap: 9px; white-space: nowrap; font-size: 13px; }
+#scraps { display: flex; align-items: center; gap: 3px; }
+.slot { display: block; width: 29px; height: 33px; border: 1px dashed #b6ac986b; image-rendering: pixelated; }
+.slot.filled { border: 0; }
+#count { font-variant-numeric: tabular-nums; }
+.reset { border: 1px solid #9d9e99; background: none; color: var(--cream); width: 36px; height: 36px; font-size: 25px; line-height: 1; }
+.reset:hover { background: #ffffff17; }
+dialog { margin: auto; border: 1px solid var(--ink); padding: 0; width: fit-content; max-width: min(94vw,900px); max-height: 94svh; background: #efe1c2; color: var(--ink); box-shadow: 6px 7px 0 #151c29; }
+dialog::backdrop { background: #111c2cbb; }
+.folio { display: flex; align-items: stretch; }
+.proof { background: #d7c5a6; display: grid; place-items: center; padding: clamp(10px,2.1vw,29px); }
+#print { display: block; max-width: min(55vw,480px); max-height: 79svh; width: auto; height: auto; image-rendering: pixelated; }
+#print.editable { cursor: crosshair; touch-action: none; user-select: none; -webkit-user-select: none; }
+.tools { align-self: center; display: flex; flex-direction: column; align-items: stretch; gap: 13px; width: clamp(165px,20vw,250px); padding: clamp(15px,2.4vw,34px); }
+h2 { margin: 0; font-size: clamp(21px,2.3vw,30px); }
+#cut-hint { margin: 0; line-height: 1.7; font-size: 14px; }
+#sample-box { margin: 0; padding: 9px 12px; border: 1px solid #74624655; background: #ded3bb; }
+#sample-box figcaption { font-size: 12px; letter-spacing: .12em; color: #454745; }
+#sample { display: block; width: 114px; max-width: 100%; height: auto; margin: 3px auto 0; image-rendering: pixelated; }
+.action, .back { min-height: 42px; border: none; padding: 8px 9px; }
+.action { background: var(--ink); color: var(--cream); }
+.back { border: 1px solid #736b5b; color: var(--ink); background: transparent; }
+.tools kbd { margin-left: 5px; }
+.action:disabled { opacity: .65; cursor: default; }
+@media (any-pointer: coarse) { #touch-move { display: flex; } }
+@media (max-width: 760px) { .keyboard-hint { display: none; } .dock { gap: 10px; } }
+@media (max-width: 550px) and (orientation: portrait) {
+  .dock { flex-wrap: wrap; justify-content: space-between; }
+  .controls { order: 5; width: 100%; text-align: center; font-size: 12px; }
+  .folio { flex-direction: column; }
+  #print { max-height: 54svh; max-width: 82vw; }
+  .tools { width: 100%; align-self: stretch; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .tools h2, #cut-hint { grid-column: 1/-1; }
+  #sample-box { display: none; }
+  #back { grid-column: 1/-1; }
+  .marker { font-size: 11px; padding: 5px 7px; }
+  #touch-move { bottom: 8px; left: 8px; gap: 6px; }
+  #touch-move button { width: 44px; height: 40px; }
+  #place { top: 8px; left: 10px; padding: 4px 7px; }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  #stage { width: min(100%, calc((100svh - 44px) * 16 / 9)); }
+  .dock { min-height: 44px; padding-block: 3px; }
+  #print { max-height: 78svh; }
+  #sample-box { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::after { transition-duration: 0s !important; } }
